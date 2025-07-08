@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-gray-900 text-white font-sans;
+    background-image:
+      radial-gradient(at 20% 20%, hsla(271, 91%, 63%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 20%, hsla(218, 91%, 63%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 20% 80%, hsla(340, 91%, 63%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 80%, hsla(30, 91%, 63%, 0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 0 20px theme('colors.purple.500 / 0.3');
+  }
+}
+
+.glass {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+@layer utilities {
+  .shadow-glass {
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  }
+  
+  .glow {
+    box-shadow: 0 0 15px rgba(128, 0, 255, 0.5);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .glass-card {
+    @apply p-4;
+  }
+  
+  h1 {
+    @apply text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+}
+
+/* Scrollbar styles for desktop only */
+@media (min-width: 768px) {
+  /* WebKit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #a78bfa, #ec4899);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    opacity: 0.8;
+  }
+
+  /* Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #a78bfa transparent;
+  }
+} 
