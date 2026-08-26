@@ -38,7 +38,7 @@ export default function Home() {
           {/* Background gradient */}
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0">
-              <div className="w-full h-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-3xl"></div>
+              <div className="w-full h-full bg-gradient-to-r from-[#f0788a]/10 to-[#ff9a9e]/10 blur-3xl"></div>
             </div>
           </div>
           
@@ -49,7 +49,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="gradient-text">PDF Tools</span>
+              <span className="text-coral-gradient">PDF Tools</span>
               <br />
               <span className="text-white">for the Modern Web</span>
             </motion.h1>
@@ -60,18 +60,18 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Transform your PDFs directly in your browser. Fast, secure, and completely private.
+              Stash, manage, and edit your PDFs in your browser. Fast, secure, and private.
             </motion.p>
 
             <motion.div 
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
               <Link
                 to="/compress"
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-medium text-white hover:from-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/20"
+                className="w-full sm:w-auto text-center px-8 py-4 bg-gradient-to-r from-[#f0788a] to-[#ff9a9e] rounded-lg font-medium text-white hover:from-[#f0788a] hover:to-[#ffa8b6] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#f0788a]/20"
               >
                 Get Started
               </Link>
@@ -83,7 +83,7 @@ export default function Home() {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/5 rounded-lg font-medium text-white hover:bg-white/10 transition-all duration-300 border border-white/10"
+                className="w-full sm:w-auto text-center px-8 py-4 bg-white/5 rounded-lg font-medium text-white hover:bg-white/10 transition-all duration-300 border border-white/10"
               >
                 View Tools
               </motion.a>
@@ -95,7 +95,7 @@ export default function Home() {
         <section id="tools" className="relative py-20 z-10 scroll-mt-28">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
               variants={stagger}
               initial="initial"
               whileInView="animate"
@@ -112,6 +112,12 @@ export default function Home() {
                 title="Merge PDFs"
                 description="Combine multiple PDFs into one file"
                 link="/merge"
+              />
+              <FeatureCard
+                icon={DocumentDuplicateIcon}
+                title="Split PDF"
+                description="Split one PDF into multiple files or extract pages"
+                link="/split"
               />
               <FeatureCard
                 icon={DocumentTextIcon}
@@ -168,7 +174,7 @@ function FeatureCard({ icon: Icon, title, description, link }: {
     >
       <Link to={link}>
         <GlassMorphism className="h-full p-6 rounded-xl transition-all duration-300 hover:bg-white/10">
-          <Icon className="w-12 h-12 text-purple-400 mb-4" />
+          <Icon className="w-12 h-12 text-[#f0788a] mb-4" />
           <h3 className="text-xl font-semibold mb-2">{title}</h3>
           <p className="text-white/60">{description}</p>
         </GlassMorphism>

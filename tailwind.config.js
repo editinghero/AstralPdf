@@ -6,6 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        dark: "#191213",
+        coral: {
+          400: "#ff9a9e",
+          500: "#f0788a",
+        },
         primary: {
           50: "#f5e6ff",
           100: "#e0c2ff",
@@ -18,6 +23,10 @@ export default {
           800: "#330066",
           900: "#1a0033"
         }
+      },
+      fontFamily: {
+        sans: ["Satoshi", "Inter", "sans-serif"],
+        display: ["Satoshi", "Inter", "sans-serif"],
       },
       backdropBlur: {
         xs: '2px',

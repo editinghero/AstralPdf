@@ -7,6 +7,7 @@ import GlassMorphism from "./GlassMorphism";
 const navLinks = [
   { name: "Compress", href: "/compress" },
   { name: "Merge", href: "/merge" },
+  { name: "Split", href: "/split" },
   { name: "Watermark", href: "/watermark" },
 ];
 
@@ -33,7 +34,7 @@ function NavItem({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <NavLink to={to} className="relative text-white/80 hover:text-white transition-colors duration-200">
       {children}
-      {isActive && <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />}
+      {isActive && <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#f0788a] to-[#ff9a9e] rounded-full" />}
     </NavLink>
   );
 }
@@ -70,7 +71,7 @@ export default function Navbar() {
               <div ref={dropdownRef} className="relative">
                 <button onClick={() => setIsImagesDropdownOpen(prev => !prev)} className="relative flex items-center gap-1 text-white/80 hover:text-white transition-colors duration-200">
                   Images <ChevronDownIcon className={`w-4 h-4 transition-transform ${isImagesDropdownOpen ? 'rotate-180' : ''}`} />
-                  {isImagesActive && !isImagesDropdownOpen && <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />}
+                  {isImagesActive && !isImagesDropdownOpen && <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#f0788a] to-[#ff9a9e] rounded-full" />}
                 </button>
                 <AnimatePresence>
                   {isImagesDropdownOpen && (
