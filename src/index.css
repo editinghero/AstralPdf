@@ -7,23 +7,26 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-gray-900 text-white font-sans;
-    background-image:
-      radial-gradient(at 20% 20%, hsla(271, 91%, 63%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 80% 20%, hsla(218, 91%, 63%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 20% 80%, hsla(340, 91%, 63%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 80% 80%, hsla(30, 91%, 63%, 0.1) 0px, transparent 50%);
-    background-attachment: fixed;
+    @apply bg-dark text-[#fff3e0] font-sans;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: clip;
   }
 }
 
 @layer components {
   .gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#f0788a] to-[#ff9a9e];
   }
   
   .text-shadow {
-    text-shadow: 0 0 20px theme('colors.purple.500 / 0.3');
+    text-shadow: 0 0 20px theme('colors.coral.500 / 0.3');
+  }
+
+  .text-coral-gradient {
+    background: linear-gradient(135deg, #f0788a 0%, #ff8fa0 40%, #ffb6c1 100%);
+    -webkit-background-clip: text;
+    color: transparent;
   }
 }
 
@@ -43,7 +46,7 @@
   }
   
   .glow {
-    box-shadow: 0 0 15px rgba(128, 0, 255, 0.5);
+    box-shadow: 0 0 15px rgba(240, 120, 138, 0.5);
   }
 }
 
